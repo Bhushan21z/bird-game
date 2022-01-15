@@ -1,10 +1,19 @@
 let score=0;
 let gameover=1;
+let m=1;
 let x;
 let y;
 let z;
-bird=document.querySelector('.bird');
+const audiofly = new Audio('move.mp3');
+const audioover = new Audio('gameoversound.mp3');
+const music= new Audio('music.mp3');
 
+    setInterval(()=>{
+        music.play();
+     },2000);
+
+bird=document.querySelector('.bird');
+//audio1.play();
 ///////// wall xxxxxxxx
 wall1=document.querySelector('.wall1');
 wall2=document.querySelector('.wall2');
@@ -14,6 +23,7 @@ wall5=document.querySelector('.wall5');
 
 let dy=parseInt(window.getComputedStyle(bird, null).getPropertyValue('top'));
 
+
 game=document.querySelector('.gameover');
 setInterval(()=>{
     if(gameover==1){
@@ -21,6 +31,7 @@ setInterval(()=>{
     document.onkeydown=function(e){
         if(e.keyCode==32){
             dy=dy-50;
+            audiofly.play();
         }
         if(e.keyCode==83){
             dy=dy+200;
@@ -51,36 +62,48 @@ setInterval(()=>{
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dx1>300 &&dx1<400 && dy<=125){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dx2>300 &&dx2<400 && dy>106 && dy<277){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dx4>300 &&dx4<400 && dy>405 &&dy<580){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dx5>300 &&dx5<400 && dy>553){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dy>=720 || dy<=-20){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
+        if(dy>=720){
+            bird.style.top="719px";
+        }
+        else{
+            bird.style.top="100px";
+        }
     }
     else if(gameover==1){
         score=score+1;
@@ -209,36 +232,42 @@ setInterval(()=>{
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dx1y>300 &&dx1y<400 && dy<=125){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dx2y>300 &&dx2y<400 && dy>106 && dy<277){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dx4y>300 &&dx4y<400 && dy>405 &&dy<580){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dx5y>300 &&dx5y<400 && dy>553){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dy>=720 || dy<=-20){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
 },50)
 
@@ -314,35 +343,41 @@ setInterval(()=>{
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dx1z>300 &&dx1z<400 && dy<=125){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dx2z>300 &&dx2z<400 && dy>106 && dy<277){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dx4z>300 &&dx4z<400 && dy>405 &&dy<580){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dx5z>300 &&dx5z<400 && dy>553){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
     else if(dy>=720 || dy<=-20){
         game.innerHTML="gameover - Reload to play again";
         gameover=0;
         game.style.opacity="1";
         bird.classList.add('birdkhatam');
+        audioover.play();
     }
 },50)
